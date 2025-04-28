@@ -11,4 +11,19 @@
   <div class="posts">
     <%= render "posts_list" %>
   </div>
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= post.title %></h2>
+    <p><%= post.text %></p>
+
+    <!-- ここにクイズプレビューを追加する！ -->
+    <% if post.text.present? %>
+      <div class="quiz-preview">
+        <h3>クイズプレビュー</h3>
+        <p><%= generate_quiz(post.text) %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+  
 </div>
