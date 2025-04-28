@@ -1,3 +1,4 @@
 class PostsController < ApplicationController
-  def resorces
+  def index
+  end
 end
