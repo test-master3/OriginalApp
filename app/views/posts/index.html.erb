@@ -1,29 +1,25 @@
 <div class="wrapper">
-  <div class="top-bar">
-    <%= render "top_bar" %>
+  <div class="side-bar">
+    <%= render "side_bar" %>
   </div>
-  <div class="line-link">
-    <%= render "line_link" %>
+  <div class="chat">
+    <%= render "main_chat" %>
   </div>
-  <div class="calender">
-    <%= render "calender" %>
-  </div>
-  <div class="posts">
-    <%= render "posts_list" %>
-  </div>
-<% @posts.each do |post| %>
-  <div class="post">
-    <h2><%= post.title %></h2>
-    <p><%= post.text %></p>
+</div>
+
+<%# <% @posts.each do |post| %>
+  <%# <div class="post"> %>
+    <%# <h2><%= post.title</h2> %>
+    <%# <p><%= post.text</p> %>
 
     <!-- ここにクイズプレビューを追加する！ -->
-    <% if post.text.present? %>
-      <div class="quiz-preview">
-        <h3>クイズプレビュー</h3>
-        <p><%= generate_quiz(post.text) %></p>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+    <%# <% if post.text.present? %>
+      <%# <div class="quiz-preview"> %>
+        <%# <h3>クイズプレビュー</h3> %>
+        <%# <p><%= generate_quiz(post.text)</p> %>
+      <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
+<%# <% end %>
   
-</div>
+<%# </div> %>
