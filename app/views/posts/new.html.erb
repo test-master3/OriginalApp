@@ -1,0 +1,26 @@
+<h1>新規投稿</h1>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %><br>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :text, "本文" %><br>
+    <%= f.text_area :text %>
+  </div>
+
+  <div>
+    <%= f.submit "投稿する" %>
+  </div>
+
+<% if @post.text.present? %>
+  <div class="quiz-preview">
+    <h2>クイズプレビュー</h2>
+    <p><%= generate_quiz(@post.text) %></p>
+  </div>
+<% end %>
+
+  <%= link_to "投稿一覧へ戻る", posts_path, class: "back-button" %>
+<% end %>
