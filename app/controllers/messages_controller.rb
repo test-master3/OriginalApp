@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
 end
