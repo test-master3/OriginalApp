@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @room = Room.first
+    @message = Message.new
   end
 
   def new
