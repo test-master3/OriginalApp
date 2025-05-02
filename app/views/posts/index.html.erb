@@ -3,7 +3,7 @@
     <%= render "side_bar" %>
   </div>
   <div class="chat">
-    <%= render "main_chat" %>
+<%= render partial: "main_chat", locals: { room: @room } %>
   </div>
 </div>
 
