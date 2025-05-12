@@ -15,6 +15,12 @@
     <%= f.submit "投稿する" %>
   </div>
 
+<div class="field">
+  <%= f.label :quiz_enabled, "この投稿をクイズ化する" %>
+  <%= f.check_box :quiz_enabled %>
+</div>
+
+
 <% if @post.text.present? %>
   <div class="quiz-preview">
     <h2>クイズプレビュー</h2>

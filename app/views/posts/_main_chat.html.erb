@@ -1,0 +1,85 @@
+<div class="chat-header">
+  <div class="left-header">
+    <div class="header-title">
+      hogefuga
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <a href="#">チャットを終了する</a>
+    </div>
+  </div>
+</div>
+
+<%# ================カレンダー＝＝＝＝＝＝＝＝＝＝ %>
+<div class="messages">
+  <%# <div class="message"> %>
+    <%# <div class="upper-message"> %>
+      <%# <div class="message-user"> %>
+        <%# Tom %>
+      <%# </div> %>
+      <%# <div class="message-date"> %>
+        <%# 2020/3/31(Wed) 12:43:30 %>
+      <%# </div> %>
+    <%# </div> %>
+    <%# <div class="lower-message"> %>
+      <%# <div class="message-content"> %>
+        <%# おはよう %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+
+  <%# <div class="message"> %>
+    <%# <div class="upper-message"> %>
+      <%# <div class="message-user"> %>
+        <%# Tom %>
+      <%# </div> %>
+      <%# <div class="message-date"> %>
+        <%# 2020/3/31(Wed) 12:47:30 %>
+      <%# </div> %>
+    <%# </div> %>
+    <%# <div class="lower-message"> %>
+      <%# <div class="message-content"> %>
+        <%# こんばんは %>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
+</div>
+
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= post.title %></h2>
+    <p><%= post.text %></p>
+    <p>
+      クイズ化: <%= post.quiz_enabled ? "✅する" : "❌しない" %>
+    </p>
+  
+    <!-- クイズプレビューを表示する -->
+    <% if post.text.present? %>
+      <div class="quiz-preview">
+        <h3>クイズプレビュー</h3>
+        <p><%= generate_quiz(post.text) %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<%# </div> %>
+
+
+
+
+
+
+<div class="form">
+  <div class="form-input">
+    <input class="form-message" placeholder= "type a message">
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <input type="file" class="hidden">
+    </label>
+  </div>
+  <input class="form-submit" type="submit" value="送信">
+</div>
